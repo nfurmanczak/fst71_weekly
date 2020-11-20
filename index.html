@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="de">
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>FST71 WEEKLY UPDATE</title>
+  <link rel="stylesheet" href="./../framework/bootstrap.min.css">
+  <link rel="stylesheet" href="./../framework/custom.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <script src="./js/datediff.js"></script>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="https://furmanczak.de/fst71_weekly/">FST71 WEEKLY UPDATE</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="https://furmanczak.de/fst71_weekly/index.html">Home <span
+                class="sr-only">Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://furmanczak.de/fst71_weekly/projekt.html">Projekt</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" id="content">
+    <script>
+      var i = 0;
+      function makeProgress() {
+        if (i < prozent(gesamteTage(), restTage())) {
+          i = i + 1;
+          $(".progress-bar").css("width", i + "%").text(i + " %");
+        }
+        // delay
+        setTimeout("makeProgress()", 30);
+      }
+      makeProgress();
+    </script>
+    <br>
+    <div class="container" id="content">
+      <div class="sticky-top">
+        <div class="alert alert-info alert-dismissible">
+          <small>
+            <center>
+              Durchhalten! Du hast schon
+              <script>document.write(gesamteTage() - restTage())</script> von
+              <script>document.write(gesamteTage())</script> Tagen geschafft. Du hast nur noch
+              <script>document.write(restTage())</script> Wochentage vor dir.
+          </small></center>
+          <div class="progress">
+            <br><br>
+            <div class="progress-bar" role="progressbar" id="pBar" aria-valuenow="25" aria-valuemin="0"
+              aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+      <div class="alert alert-warning alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>🔥 DEADLINES 🔥 </strong>
+        
+      </div>
+      <br>
+      <div class="box_white">
+        <b>KW 38</b> (14. Sept. - 18 Sept. 2020)
+        <br>
+        <hr>
+        <b>DBA:</b> Besprechen der <a href="https://furmanczak.de/fst71_weekly/media/dba/oracle_views.sql">Abgabe</a> mit Views in Oracle für verschiedene Benutzer. Zusätzlich wurden die Trigger Beispiele in der Abgabe besprochen (Was ist ein Trigger? Welche Möglichkeiten bieten Trigger?). Der Unterricht wurde wegen der niedrigen Anwesenheit und aufgrund der Hitze bereits nach 2 Stunden beendet. Hr. Feser hat empfohlen sich vor der nächsten Stunde dynamische und materialisierte Views anzusehen (Siehe Teams => Einstieg Wiederholung => Benutzerverwaltung in Oracle). <br>
+        <b>QSI:</b> Ausführliches besprechen der <a href="https://furmanczak.de/fst71_weekly/media/qsi/HA_16_Sept_QSI.pdf">Hausaufgabe</a> im Unterricht. Danach haben wir einige Seiten zu <a href="https://furmanczak.de/fst71_weekly/media/qsi/Grundlagen_Wahrscheinlichkeitsrechnung_Timischl.pdf">Wahrscheinlichkeitsrechnung</a> gelesen. Wir sollen uns schon mal die Aufgaben 11 bis 25 ansehen, diese müssen allerdings NICHT bearbeitet werden.<br>
+        <b>AWN:</b> Nachdem einspielen der Testpersonen,  <a href="https://github.com/nfurmanczak/ef_core_sqlite_example/blob/971f75abfd7c1c2eb47f5de58de90e9c8d0844c5/ef_core_sqlite_example/Program.cs#L44-L73">siehe Beispiel</a>, sollen wir nun <a href="https://furmanczak.de/fst71_weekly/media/awn/spiegel-bestseller.txt">Beispieldaten</a> für Medien (z.B.: Bücher) importieren. Hierfür müssen einige Attribute an der Klasse Medium.cs angepasst werden. Der Import ist etwas kniffig da in der Datei verschiedene Daten enthalten sind und kein standartisiertes Format wie csv oder XML verwendet wird. Wir werden den Import in der kommenden Stunden besprechen. Aktuell gibt es keine Vorgabe ob wir für das Format und Category eine eigene Tabelle verwenden sollen.    <br>
+      </div>
+      <br>
+      <div class="box_gray">
+        <b>KW 37</b> (07. Sept. - 11 Sept. 2020)
+        <br>
+        <hr>
+        <b>ÖNT:</b>  Installation von mind. einer Debian VM auf der bind9 als DNS-Server betrieben wird. Einrichten einer DNS-Zone in bind9 mit einfachen DNS-Einträgen (A-Records, TXT-Records, etc.)  <br>
+        <b>DBA:</b>  Weiterarbeit am SQL Skript um automatisch Benutzer und View anzulegen. Abgabe und besprechung in der kommenden Stunde.<br>
+        <b>AWN:</b>  <a href="https://furmanczak.de/fst71_weekly/media/awn/set_get_kurzvortrag.pdf">Kurzvortrag</a> zum GET/SET-Accessor. Einlesen einer <a href="https://furmanczak.de/fst71_weekly/media/awn/fake-persons.txt">Textdatei</a> mit Beispieldaten für Personen via <a href="https://github.com/nfurmanczak/ef_core_sqlite_example/blob/971f75abfd7c1c2eb47f5de58de90e9c8d0844c5/ef_core_sqlite_example/Program.cs#L44-L73">Streamreader</a> um diese dann in der SQLite Datenbank zu speichern.<br>
+      </div>
+      <br>
+      <div class="box_white">
+        <b>KW 36</b> (31. Aug. - 04 Sept. 2020)
+        <br>
+        <hr>
+        <b>INT:</b> Installation der Oracle Datenbank inkl. Oracle SQL Developer. Anlegen von zusätzlichen Benutzern und der HR Testdatenbank. Zur nächsten Stunde sollen 3 Benutzer und mehrere Views angelegt werden welche Daten aus der HR Test DB wiedergeben. Die Views sollen den Datenschutz beachten (z.B.: kann das Geld oder der Wohnort für andere Benutzer ausgeblendet werden) und eine gewisse "komplexität aufweisen" (z.B.: Joins). Die Benutzer sollen auf die einzelnen Views zugreifen können, allerdings soll nicht jeder Benutzer auf alle Views zugreifen können. Neben SELECT Querys sollten die Views auch für DELETE oder UPDATES genutzt werden können. Das ganze soll als SQL Skript gespeichert werden. Abgabe ist in der nächsten Stunde, wir bekommen aber noch etwas Zeit das SQL-Skript am Anfang der Stunde fertig zu stellen.<br>
+        <b>QSI:</b> Besprechung der letzten Hausaufgabe <a href="https://furmanczak.de/fst71_weekly/media/qsi/QSI_Hausaufgabe.pdf">(Aufgabe 1 bis 3 auf Seite 17)</a>. Einführung in arithmetisches Mittel und Median durch die Aufgabe 3 auf S. 21 und Aufgaben 1, 2 und 4 auf S. 22  <br>
+        <b>AWN:</b> Aufgrund der geringen Anwesenheit haben wir das Thema Beziehung mittels EF Core wiederholt. Schwerpunkt war die Beziehung von einem FK dessen PK in der selben Tabelle ist. <a href="https://furmanczak.de/fst71_weekly/media/awn/EmployeeDemo.zip">Beispiel aus dem Unterricht</a><br>
+      </div> 
+      <br>
+      <div class="box_gray">
+        <b>KW 35</b> (24. Aug. - 27 Aug. 2020)
+        <br>
+        <hr>
+        <b>ÖNT:</b> Kurze Einführung in das Thema Kryptografie (Symetrische und Asymetrische Verschlüsselung, Hashes, Web of Trust)<br>
+        <b>ÖNT:</b> Besprechen der Fragen zum Thema Kryptografie. Kurze Einführung in DNS und BIND9. In den kommendne Stunden werden wir selbst einen BIND9 auf einer Debian VM als DNS-Server konfigurieren. <br>
+        <b>AWN:</b> Das Programm wurde um eine Logging Funktion erweitert um die SQL Querys auf der Console (Console.WriteLine) oder auch in einer Datei auszugeben. <br>
+      </div>
+      <br>
+      <div class="box_white">
+        <b>KW 34</b> (17. Aug. - 21 Aug. 2020)
+        <br>
+        <hr>
+        <b>INT: </b> Im letzten Jahr werden wir uns mit Oracle Express sowie bestimmten Themen aus dem 2. Jahr wiederholen, da diese für die Abschlussprüfung relevnt sind. Dazu zählt z.B.: die normalisierung von Datenbanken. Bitte installiert Oracle Express und den Oracle Devloper. Zunächst werden wir mit einer Beispieldatenbank von Oracle arbeiten.<br>
+        <b>QSI: </b> Einführung in Statistik. Bearbeitung und Besprechung der Aufgaben 1 bis 3 (Seite 11). Hausaufgabe ist bearbeitung der Aufgaben 1 bis 3 auf Seite 17 <a href="https://furmanczak.de/fst71_weekly/media/qsi/QSI_Hausaufgabe.pdf">(Lösung)</a> <a href="https://furmanczak.de/fst71_weekly/media/qsi/Erhebung_und_Bewertung_von_Daten.pdf">Aufgabenblatt</a><br>
+        <b>AWN: </b> Besprochen wurde der Quellcode aus Hr. Folkmanns Skript wo mittels EF Core eine SQLite Datenbank angelegt wird und einige Beispieldaten eingetragen und ausgelesen werden. Zusätzlich wurden nochmal eine OOP Themen wie Vererbung oder GET/SET vertief. Eine lauffähige Version liegt auf <a href="https://github.com/nfurmanczak/ef_core_sqlite_example">github.com</a>.<br>
+      </div>
+      <br>
+      <div class="box_gray">
+        <b>KW 33</b> (10. Aug. - 14 Aug. 2020)
+        <br>
+        <hr>
+        <b>INT:</b> Ausgefallen<br>
+        <b>AWM:</b> Besprechung der Themen für das 4. Jahr und die Abschlussklausur:
+        <ul>
+          <li>C# mit .net Core </li>
+          <li>Entity Framework Core </li>
+          <li>ORM (object-relational mapping)</li>
+          <li>Klassen, Vererbung und Konsolenanwendung</li>
+        </ul>
+        Im Jannuar 2021 schreiben wir eine Probeklausur als vorbereitung zur Abschlussprüfung. Vorraussichtlich wird die
+        Probeklausur auch bewertet. Hr. Folkmann hat ein eigenes <a href="https://furmanczak.de/fst71_weekly/media/awn/FST71-JG4-AWE-Skript-FN-v1.0.pdf">Skript</a> zum Unterricht veröffentlicht welches er auch in gewissen Abständen aktualisieren möchte. 
+      </div>
+    <br>
+    <br>
+  </div>
+
+  <br><br>
+  <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; 2020 furmanczak.de</small>
+    </div>
+  </footer>
+
+</body>
+
+</html>
